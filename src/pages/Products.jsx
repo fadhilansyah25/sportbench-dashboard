@@ -44,16 +44,13 @@ export default function Products() {
   const [insertProduct, { loading: loadingInsert, error: errorInsert }] =
     useMutation(INSERT_PRODUCT, {
       refetchQueries: [GET_PRODUCTS],
-      notifyOnNetworkStatusChange: true,
     });
   const [deleteProduct, { loading: loadDelete }] = useMutation(DELETE_PRODUCT, {
     refetchQueries: [GET_PRODUCTS],
-    notifyOnNetworkStatusChange: true,
   });
   const [updateProduct, { loading: loadingUpdate, error: errorUpdate }] =
     useMutation(UPDATE_PRODUCT, {
       refetchQueries: [GET_CATEGORY],
-      notifyOnNetworkStatusChange: true,
     });
 
   // Function

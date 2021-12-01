@@ -48,7 +48,7 @@ export const INSERT_PRODUCT = gql`
 
 export const GET_PRODUCTS = gql`
   query MyQuery($where: sport_bench_products_bool_exp = {}) {
-    sport_bench_products(where: $where) {
+    sport_bench_products(where: $where, order_by: { created_at: desc }) {
       category_id
       rating
       product_name

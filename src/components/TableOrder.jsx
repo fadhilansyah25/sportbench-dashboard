@@ -29,7 +29,7 @@ export default function TableOrder({
           {data?.sport_bench_orders?.map((item, idx) => (
             <tr key={idx}>
               <td>{new Date(item.created_at).toLocaleString()}</td>
-              <td>{item.id.slice(0, 8)}</td>
+              <td>ID{item.id.slice(0, 8)}</td>
               <td>{item.fullname}</td>
               <td>{item.email}</td>
               <td>{item.noTelephone}</td>

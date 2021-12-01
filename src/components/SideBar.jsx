@@ -90,24 +90,24 @@ export default function SideBar() {
           className="dropdown-menu dropdown-menu-dark text-small shadow"
           aria-labelledby="dropdownUser1"
         >
-          {/* <li>
-            <a className="dropdown-item" href="#">
+          <li>
+            <p className="dropdown-item" href="#">
               New project...
-            </a>
+            </p>
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <p className="dropdown-item" href="#">
               Settings
-            </a>
+            </p>
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <p className="dropdown-item" href="#">
               Profile
-            </a>
+            </p>
           </li>
           <li>
             <hr className="dropdown-divider" />
-          </li> */}
+          </li>
           <li>
             <p className="dropdown-item" href="#">
               Sign out

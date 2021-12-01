@@ -19,7 +19,7 @@ export default function TableProduct({ data, setEditProduct, handleDelete }) {
         <tbody>
           {data?.sport_bench_products?.map((item, idx) => (
             <tr key={idx}>
-              <td>{item.id.slice(0, 8)}</td>
+              <td>ID{item.id.slice(0, 8)}</td>
               <td>{item.product_name}</td>
               <td className="text-capitalize">
                 {item.product_category.category}
