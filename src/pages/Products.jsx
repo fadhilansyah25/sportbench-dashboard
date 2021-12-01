@@ -169,7 +169,7 @@ export default function Products() {
           </button>
         </div>
 
-        <div className="mt-3">
+        <div className="mt-3" style={{ fontSize: ".85rem" }}>
           {loadingProduct || loadDelete || loadingInsert || loadingUpdate ? (
             <div>Please wait</div>
           ) : null}
