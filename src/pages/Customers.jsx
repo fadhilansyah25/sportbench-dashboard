@@ -1,15 +1,24 @@
-import { useSubscription } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import SideBar from "components/SideBar";
 import { GET_USERS } from "graphql/queries";
 import React from "react";
 
 export default function Customers() {
-  const { data, loading, error } = useSubscription(GET_USERS);
+  const { data, loading, error, refetch } = useQuery(GET_USERS);
   return (
     <>
-      <SideBar></SideBar>{" "}
+      <SideBar></SideBar>
       <div className="container p-5" style={{ marginLeft: "20rem" }}>
-        <h3>Customers</h3>
+        <div className="d-flex justify-content-between">
+          <h3>Customers</h3>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => refetch({ where: {} })}
+          >
+            Refresh
+          </button>
+        </div>
         <div className="mt-3">
           {loading ? <div>Please wait</div> : null}
           {error ? <div>{error.message}</div> : null}
@@ -20,7 +29,7 @@ export default function Customers() {
           >
             <thead>
               <tr>
-                <th>ID</th>
+                <th>Customer ID</th>
                 <th>Fullname</th>
                 <th>Email</th>
                 <th>Whatsapp</th>
