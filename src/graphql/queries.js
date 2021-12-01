@@ -84,7 +84,10 @@ export const UPDATE_PRODUCT = gql`
 
 export const GET_ORDERS = gql`
   query MyQuery($where: sport_bench_orders_bool_exp = {}) {
-    sport_bench_orders(where: $where, order_by: {status: desc}) {
+    sport_bench_orders(
+      where: $where
+      order_by: { status: desc, created_at: desc }
+    ) {
       address
       color
       description
@@ -111,6 +114,7 @@ export const GET_ORDERS = gql`
         id
         no_telephone
       }
+      created_at
     }
   }
 `;

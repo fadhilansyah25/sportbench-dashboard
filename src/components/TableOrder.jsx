@@ -12,13 +12,14 @@ export default function TableOrder({
       <table id="example" className="table display" style={{ width: "100%" }}>
         <thead>
           <tr>
+            <th>Date</th>
             <th>ID</th>
             <th>Fullname</th>
             <th>Email</th>
             <th>Whatsapp</th>
             <th>Total</th>
             <th>Address</th>
-            <th>Detail Transaction</th>
+            <th>Details</th>
             <th>Payment</th>
             <th>Status</th>
             <th>Action</th>
@@ -27,6 +28,7 @@ export default function TableOrder({
         <tbody style={{ fontSize: ".85rem" }}>
           {data?.sport_bench_orders?.map((item, idx) => (
             <tr key={idx}>
+              <td>{new Date(item.created_at).toLocaleString()}</td>
               <td>{item.id.slice(0, 8)}</td>
               <td>{item.fullname}</td>
               <td>{item.email}</td>
@@ -42,12 +44,12 @@ export default function TableOrder({
               <td>
                 <button
                   type="button"
-                  className="btn btn-sm mx-1 btn-outline-primary w-100"
+                  className="btn btn-sm mx-1 btn-outline-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#detail-transaction"
                   onClick={() => setDetailTrans(item)}
                 >
-                  Details Transaction
+                  View
                 </button>
               </td>
               <td>
