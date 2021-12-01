@@ -39,7 +39,7 @@ export default function Customers() {
             <tbody style={{ fontSize: ".85rem" }}>
               {data?.sport_bench_users?.map((item, idx) => (
                 <tr key={idx}>
-                  <td>{item.id}</td>
+                  <td>ID{item.id.slice(0,8)}</td>
                   <td>{item.fullname}</td>
                   <td>{item.email}</td>
                   <td>{item.no_telephone}</td>
