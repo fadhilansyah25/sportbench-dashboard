@@ -10,13 +10,13 @@ function App() {
     <div className="App d-flex">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="home"></Navigate>}>
-            <Route path="home" element={<Home></Home>}></Route>
-            <Route path="dashboard" element={<Dashboard></Dashboard>}></Route>
-            <Route path="products" element={<Products></Products>}></Route>
-            <Route path="orders" element={<Orders></Orders>}></Route>
-            <Route path="customers" element={<Customers></Customers>}></Route>
+          <Route path="/" element={<Navigate to="/home"></Navigate>}>
           </Route>
+          <Route path="/home" element={<Home></Home>}></Route>
+          <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+          <Route path="/products" element={<Products></Products>}></Route>
+          <Route path="/orders" element={<Orders></Orders>}></Route>
+          <Route path="/customers" element={<Customers></Customers>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

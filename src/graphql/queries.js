@@ -84,7 +84,7 @@ export const UPDATE_PRODUCT = gql`
 
 export const GET_ORDERS = gql`
   query MyQuery($where: sport_bench_orders_bool_exp = {}) {
-    sport_bench_orders(where: $where) {
+    sport_bench_orders(where: $where, order_by: {status: desc}) {
       address
       color
       description
