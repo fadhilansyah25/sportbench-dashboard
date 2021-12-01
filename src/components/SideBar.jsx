@@ -9,7 +9,7 @@ export default function SideBar() {
       style={{ width: "20rem", height: "100vh", position: "fixed" }}
     >
       <Link
-        to="/home"
+        to="/"
         className="d-flex align-items-center ms-3 my-2 text-white text-decoration-none"
       >
         <img className="d-block" src={SportBenchLogo} alt="" style={{height: '30px'}} />
@@ -19,7 +19,7 @@ export default function SideBar() {
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="mb-3">
           <Link
-            to="/home"
+            to="/"
             className="nav-link d-flex text-white"
             aria-current="page"
           >
