@@ -36,7 +36,11 @@ export default function Products() {
   const imageEdit = useRef(null);
 
   // Query Graph
-  const { data, loading: loadingProduct } = useQuery(GET_PRODUCTS, {
+  const {
+    data,
+    loading: loadingProduct,
+    refetch,
+  } = useQuery(GET_PRODUCTS, {
     variables: { where: {} },
   });
 
@@ -161,11 +165,18 @@ export default function Products() {
           <h3>Products</h3>
           <button
             type="button"
-            className="btn btn-primary"
+            className="btn btn-primary me-3"
             data-bs-toggle="modal"
             data-bs-target="#insert-product"
           >
             Add Product
+          </button>
+          <button
+            type="button"
+            className="btn btn-oulined-primary"
+            onClick={() => refetch({ where: {} })}
+          >
+            Refresh
           </button>
         </div>
 
