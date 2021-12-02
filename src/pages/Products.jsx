@@ -163,21 +163,23 @@ export default function Products() {
       <div className="container p-5" style={{ marginLeft: "20rem" }}>
         <div className="d-flex justify-content-between">
           <h3>Products</h3>
-          <button
-            type="button"
-            className="btn btn-primary me-3"
-            data-bs-toggle="modal"
-            data-bs-target="#insert-product"
-          >
-            Add Product
-          </button>
-          <button
-            type="button"
-            className="btn btn-oulined-primary"
-            onClick={() => refetch({ where: {} })}
-          >
-            Refresh
-          </button>
+          <div>
+            <button
+              type="button"
+              className="btn btn-primary me-3"
+              data-bs-toggle="modal"
+              data-bs-target="#insert-product"
+            >
+              Add Product
+            </button>
+            <button
+              type="button"
+              className="btn btn-outline-primary"
+              onClick={() => refetch({ where: {} })}
+            >
+              Refresh
+            </button>
+          </div>
         </div>
 
         <div className="mt-3" style={{ fontSize: ".85rem" }}>
