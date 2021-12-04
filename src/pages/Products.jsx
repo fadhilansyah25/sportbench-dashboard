@@ -6,7 +6,7 @@ import {
   INSERT_PRODUCT,
   UPDATE_PRODUCT,
 } from "graphql/queries";
-import { useMutation, useQuery, useSubscription } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { deleteFileFromFirebase, uploadImageToFireBase } from "firebase";
 import ModalAddProduct from "components/ModalAddProduct";
 import ModalEditProduct from "components/ModalEditProduct";
@@ -40,7 +40,7 @@ export default function Products() {
     data,
     loading: loadingProduct,
     // refetch,
-  } = useSubscription(GET_PRODUCTS, {
+  } = useQuery(GET_PRODUCTS, {
     variables: { where: {} },
   });
 
@@ -71,7 +71,7 @@ export default function Products() {
     setImageAsFile(image);
   };
 
-  const resetForm = async () => {
+  const resetForm = () => {
     imageInput.current.value = null;
     setImageAsFile("");
     setFormProduct({
