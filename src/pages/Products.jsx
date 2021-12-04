@@ -45,16 +45,10 @@ export default function Products() {
 
   // Mutation Graph
   const [insertProduct, { loading: loadingInsert, error: errorInsert }] =
-    useMutation(INSERT_PRODUCT, {
-      refetchQueries: [GET_PRODUCTS],
-    });
-  const [deleteProduct, { loading: loadDelete }] = useMutation(DELETE_PRODUCT, {
-    refetchQueries: [GET_PRODUCTS],
-  });
+    useMutation(INSERT_PRODUCT);
+  const [deleteProduct, { loading: loadDelete }] = useMutation(DELETE_PRODUCT);
   const [updateProduct, { loading: loadingUpdate, error: errorUpdate }] =
-    useMutation(UPDATE_PRODUCT, {
-      refetchQueries: [GET_CATEGORY],
-    });
+    useMutation(UPDATE_PRODUCT);
 
   // Function
   const handleInputChange = (e) => {
@@ -168,13 +162,6 @@ export default function Products() {
             >
               Add Product
             </button>
-            {/* <button
-              type="button"
-              className="btn btn-outline-primary"
-              // onClick={() => refetch({ where: {} })}
-            >
-              Refresh
-            </button> */}
           </div>
         </div>
 
