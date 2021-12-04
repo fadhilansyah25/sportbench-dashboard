@@ -6,7 +6,7 @@ import {
   INSERT_PRODUCT,
   UPDATE_PRODUCT,
 } from "graphql/queries";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery, useSubscription } from "@apollo/client";
 import { deleteFileFromFirebase, uploadImageToFireBase } from "firebase";
 import ModalAddProduct from "components/ModalAddProduct";
 import ModalEditProduct from "components/ModalEditProduct";
@@ -39,8 +39,8 @@ export default function Products() {
   const {
     data,
     loading: loadingProduct,
-    refetch,
-  } = useQuery(GET_PRODUCTS, {
+    // refetch,
+  } = useSubscription(GET_PRODUCTS, {
     variables: { where: {} },
   });
 
