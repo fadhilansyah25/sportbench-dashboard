@@ -47,20 +47,20 @@ export const INSERT_PRODUCT = gql`
 `;
 
 export const GET_PRODUCTS = gql`
-  query MyQuery($where: sport_bench_products_bool_exp = {}) {
-    sport_bench_products(where: $where, order_by: { created_at: desc }) {
-      category_id
-      rating
-      product_name
-      product_image
-      product_category {
-        category
-      }
-      price
-      instock
-      id
+subscription MySubscription($where: sport_bench_products_bool_exp = {}) {
+  sport_bench_products(where: $where, order_by: {created_at: desc}) {
+    rating
+    product_name
+    product_image
+    price
+    instock
+    id
+    category_id
+    product_category {
+      category
     }
   }
+}
 `;
 
 export const DELETE_PRODUCT = gql`
