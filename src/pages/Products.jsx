@@ -100,9 +100,8 @@ export default function Products() {
 
   const handleDelete = async (uuid, imageURL) => {
     if (window.confirm("Yakin mau ngehapus?")) {
-      await deleteProduct({ variables: { _eq: uuid } });
       await deleteFileFromFirebase(imageURL);
-      console.log("success delete data");
+      await deleteProduct({ variables: { _eq: uuid } });
     }
   };
 
@@ -136,7 +135,6 @@ export default function Products() {
           },
         },
       });
-      console.log("success Update data");
     } else {
       await deleteFileFromFirebase(editProduct.product_image);
       const getUploadedUrl = await uploadImageToFireBase(imageAsFile);
@@ -153,7 +151,6 @@ export default function Products() {
           },
         },
       });
-      console.log("success Update data");
     }
   };
 
