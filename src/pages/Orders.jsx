@@ -10,9 +10,7 @@ export default function Orders() {
   const [imagePayment, setImagePayment] = useState("");
   const [detailTrans, setDetailTrans] = useState(null);
   const { data, loading, error } = useSubscription(GET_ORDERS);
-  const [updateOrder, { loading: loadingUpdate }] = useMutation(UPDATE_ORDERS, {
-    refetchQueries: [GET_ORDERS],
-  });
+  const [updateOrder, { loading: loadingUpdate }] = useMutation(UPDATE_ORDERS);
 
   const handleAccept = (id) => {
     if (window.confirm("Yakin Nih Mau ACC?")) {
