@@ -83,11 +83,8 @@ export const UPDATE_PRODUCT = gql`
 `;
 
 export const GET_ORDERS = gql`
-  query MyQuery($where: sport_bench_orders_bool_exp = {}) {
-    sport_bench_orders(
-      where: $where
-      order_by: { status: desc, created_at: desc }
-    ) {
+  subscription MySubscription($where: sport_bench_orders_bool_exp = {}) {
+    sport_bench_orders(order_by: {status: desc, created_at: desc}, where: $where) {
       address
       color
       description

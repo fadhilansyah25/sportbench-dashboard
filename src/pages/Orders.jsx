@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation, useSubscription } from "@apollo/client";
 import ModalDetailProd from "components/ModalDetailProd";
 import ModalimagePayment from "components/ModalimagePayment";
 import SideBar from "components/SideBar";
@@ -9,7 +9,7 @@ import React, { useState } from "react";
 export default function Orders() {
   const [imagePayment, setImagePayment] = useState("");
   const [detailTrans, setDetailTrans] = useState(null);
-  const { data, loading, error, refetch } = useQuery(GET_ORDERS);
+  const { data, loading, error } = useSubscription(GET_ORDERS);
   const [updateOrder, { loading: loadingUpdate }] = useMutation(UPDATE_ORDERS, {
     refetchQueries: [GET_ORDERS],
   });
@@ -32,13 +32,13 @@ export default function Orders() {
       <div className="container p-5" style={{ marginLeft: "20rem" }}>
         <div className="d-flex justify-content-between">
           <h3>Orders</h3>
-          <button
+          {/* <button
             type="button"
             className="btn btn-primary"
             onClick={() => refetch({ where: {} })}
           >
             Refresh
-          </button>
+          </button> */}
         </div>
         <div className="mt-3">
           {loading || loadingUpdate ? <div>Please wait</div> : null}
